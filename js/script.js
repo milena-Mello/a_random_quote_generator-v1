@@ -75,11 +75,22 @@ function printQuote() {
   document.getElementById('quote-box').innerHTML = html;
 }
 
+/**
+ * `createQuoteIntervals`function:
+ * This function creates an interval for every 10 seconds to print a quote
+ */
+function createQuoteIntervals() {
+  setInterval(printQuote, 10000);
+}
 
 
-
-/***
+/**
  * click event listener for the print quote button 
 **/
  document.getElementById('load-quote').addEventListener("click", printQuote, false);
+
+ /**
+  * load event listener
+  */
+ document.body.addEventListener('load', createQuoteIntervals, true);
 
